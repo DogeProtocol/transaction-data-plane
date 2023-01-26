@@ -1,0 +1,3427 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dp.read.api</name>
+    </assembly>
+    <members>
+        <member name="T:dp.read.api.Attributes.ValidateModelStateAttribute">
+            <summary>
+            Model state validation attribute
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Attributes.ValidateModelStateAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Called before the action method is invoked
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:dp.read.api.Controllers.AccountsApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Controllers.AccountsApiController.GetAccountBalance(System.String)">
+            <summary>
+            Get account balance
+            </summary>
+            <param name="address">the string representing the address</param>
+            <response code="200">Success</response>
+            <response code="404">Not Found</response>
+            <response code="429">Client Error</response>
+            <response code="503">Server Error</response>
+        </member>
+        <member name="M:dp.read.api.Controllers.AccountsApiController.ListAccountTransactions(System.String,System.Nullable{System.Int32})">
+            <summary>
+            List account transactions info by page
+            </summary>
+            <param name="address">the string representing the address</param>
+            <param name="pageIndex">the interger representing page number</param>
+            <response code="200">Success</response>
+            <response code="404">Not Found</response>
+            <response code="429">Client Error</response>
+            <response code="503">Server Error</response>
+        </member>
+        <member name="T:dp.read.api.Filters.BasePathFilter">
+            <summary>
+            BasePath Document Filter sets BasePath property of Swagger and removes it from the individual URL paths
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Filters.BasePathFilter.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="basePath">BasePath to remove from Operations</param>
+        </member>
+        <member name="P:dp.read.api.Filters.BasePathFilter.BasePath">
+            <summary>
+            Gets the BasePath of the Swagger Doc
+            </summary>
+            <returns>The BasePath of the Swagger Doc</returns>
+        </member>
+        <member name="M:dp.read.api.Filters.BasePathFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Apply the filter
+            </summary>
+            <param name="swaggerDoc">OpenApiDocument</param>
+            <param name="context">FilterContext</param>
+        </member>
+        <member name="T:dp.read.api.Filters.GeneratePathParamsValidationFilter">
+            <summary>
+            Path Parameter Validation Rules Filter
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Filters.GeneratePathParamsValidationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="operation">Operation</param>
+            <param name="context">OperationFilterContext</param>
+        </member>
+        <member name="T:dp.read.api.Models.AccountTransactionSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.Hash">
+            <summary>
+            Gets or Sets Hash
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.Nonce">
+            <summary>
+            Gets or Sets Nonce
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.From">
+            <summary>
+            Gets or Sets From
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.To">
+            <summary>
+            Gets or Sets To
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.Gas">
+            <summary>
+            Gets or Sets Gas
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.GasPrice">
+            <summary>
+            Gets or Sets GasPrice
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.TransactionType">
+            <summary>
+            Gets or Sets TransactionType
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummary.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummary.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummary.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummary.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummary.Equals(dp.read.api.Models.AccountTransactionSummary)">
+            <summary>
+            Returns true if AccountTransactionSummary instances are equal
+            </summary>
+            <param name="other">Instance of AccountTransactionSummary to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummary.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:dp.read.api.Models.AccountTransactionSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.AccountTransactionSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummaryResponse.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummaryResponse.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummaryResponse.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummaryResponse.Equals(dp.read.api.Models.AccountTransactionSummaryResponse)">
+            <summary>
+            Returns true if AccountTransactionSummaryResponse instances are equal
+            </summary>
+            <param name="other">Instance of AccountTransactionSummaryResponse to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.AccountTransactionSummaryResponse.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:dp.read.api.Models.Balance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Balance._Balance">
+            <summary>
+            Gets or Sets _Balance
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Balance.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Balance.BlockDate">
+            <summary>
+            Gets or Sets BlockDate
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Models.Balance.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Balance.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Balance.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Balance.Equals(dp.read.api.Models.Balance)">
+            <summary>
+            Returns true if Balance instances are equal
+            </summary>
+            <param name="other">Instance of Balance to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Balance.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:dp.read.api.Models.BalanceResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.BalanceResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Models.BalanceResponse.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.BalanceResponse.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.BalanceResponse.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.BalanceResponse.Equals(dp.read.api.Models.BalanceResponse)">
+            <summary>
+            Returns true if BalanceResponse instances are equal
+            </summary>
+            <param name="other">Instance of BalanceResponse to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.BalanceResponse.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:dp.read.api.Models.ErrorResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.ErrorResponseModel.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.ErrorResponseModel.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Models.ErrorResponseModel.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.ErrorResponseModel.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.ErrorResponseModel.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.ErrorResponseModel.Equals(dp.read.api.Models.ErrorResponseModel)">
+            <summary>
+            Returns true if ErrorResponseModel instances are equal
+            </summary>
+            <param name="other">Instance of ErrorResponseModel to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.ErrorResponseModel.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:dp.read.api.Models.Receipt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Receipt.Type">
+            <summary>
+            Gets or Sets Type
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Receipt.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Receipt.ContractAddress">
+            <summary>
+            Gets or Sets ContractAddress
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Receipt.GasUsed">
+            <summary>
+            Gets or Sets GasUsed
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Receipt.CumulativeGasUsed">
+            <summary>
+            Gets or Sets CumulativeGasUsed
+            </summary>
+        </member>
+        <member name="P:dp.read.api.Models.Receipt.EffectiveGasPrice">
+            <summary>
+            Gets or Sets EffectiveGasPrice
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Models.Receipt.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Receipt.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Receipt.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Receipt.Equals(dp.read.api.Models.Receipt)">
+            <summary>
+            Returns true if Receipt instances are equal
+            </summary>
+            <param name="other">Instance of Receipt to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:dp.read.api.Models.Receipt.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:dp.read.api.Models.TransactionType">
+            <summary>
+            Gets or Sets TransactionType
+            </summary>
+        </member>
+        <member name="F:dp.read.api.Models.TransactionType.CoinTransferEnum">
+            <summary>
+            Enum CoinTransferEnum for CoinTransfer
+            </summary>
+        </member>
+        <member name="F:dp.read.api.Models.TransactionType.NewTokenEnum">
+            <summary>
+            Enum NewTokenEnum for NewToken
+            </summary>
+        </member>
+        <member name="F:dp.read.api.Models.TransactionType.TokenTransferEnum">
+            <summary>
+            Enum TokenTransferEnum for TokenTransfer
+            </summary>
+        </member>
+        <member name="F:dp.read.api.Models.TransactionType.NewSmartContractEnum">
+            <summary>
+            Enum NewSmartContractEnum for NewSmartContract
+            </summary>
+        </member>
+        <member name="F:dp.read.api.Models.TransactionType.SmartContractEnum">
+            <summary>
+            Enum SmartContractEnum for SmartContract
+            </summary>
+        </member>
+        <member name="T:dp.read.api.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:dp.read.api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Create the web host builder.
+            </summary>
+            <param name="args"></param>
+            <returns>IWebHostBuilder</returns>
+        </member>
+        <member name="T:dp.read.api.Security.ApiKeyAuthenticationHandler">
+            <summary>
+            class to handle api_key security.
+            </summary>
+        </member>
+        <member name="F:dp.read.api.Security.ApiKeyAuthenticationHandler.SchemeName">
+            <summary>
+            scheme name for authentication handler.
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Security.ApiKeyAuthenticationHandler.HandleAuthenticateAsync">
+            <summary>
+            verify that require api key header exist and handle authorization.
+            </summary>
+        </member>
+        <member name="T:dp.read.api.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:dp.read.api.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="env"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:dp.read.api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Org.OpenAPITools.Api.IDpscanApi">
+            <summary>
+            Represents a collection of functions to interact with the API endpoints
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.GetAccount(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get accounts info by address 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <returns>Account</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.GetBlock(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get blocks info by blocknumber 
+            </summary>
+            <param name="platform"></param>
+            <param name="blockNumber"></param>
+            <returns>Block</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.GetTokens(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get token info by token address 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.GetTransaction(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get transactions info by transactionHash 
+            </summary>
+            <param name="platform"></param>
+            <param name="transactionHash"></param>
+            <returns>Transaction</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.GetValidator(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get validator info by address 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <returns>ValidatorSummary</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListAccountTokenTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List account token transactions info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <param name="pageIndex"></param>
+            <returns>AccountTokenTransactionSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListAccountTokens(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List account token info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <param name="pageIndex"></param>
+            <returns>AccountTokenSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListAccountTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List account transactions info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <param name="pageIndex"></param>
+            <returns>AccountTransactionSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListBlocks(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List blocks info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="pageIndex"></param>
+            <returns>BlockSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListTokenHolders(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List token holder info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <param name="pageIndex"></param>
+            <returns>TokenHolderSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListTokenTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List  token transactions info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <param name="pageIndex"></param>
+            <returns>TokenTransactionSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListTokens(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List tokens info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="pageIndex"></param>
+            <returns>TokenSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListTransactions(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List transactions info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="pageIndex"></param>
+            <returns>TransactionSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListTransactionsBlock(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List transactions info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="blockNumber"></param>
+            <param name="pageIndex"></param>
+            <returns>TransactionSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListValidatorTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List validator transactions info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="address"></param>
+            <param name="pageIndex"></param>
+            <returns>ValidatorTransactionSummaryResponse</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.IDpscanApi.ListValidators(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List validator info by page 
+            </summary>
+            <param name="platform"></param>
+            <param name="pageIndex"></param>
+            <returns>ValidatorSummaryResponse</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Api.DpscanApi">
+            <summary>
+            Represents a collection of functions to interact with the API endpoints
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.#ctor(Org.OpenAPITools.Client.ApiClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Org.OpenAPITools.Api.DpscanApi"/> class.
+            </summary>
+            <param name="apiClient"> an instance of ApiClient (optional)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Org.OpenAPITools.Api.DpscanApi"/> class.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.SetBasePath(System.String)">
+            <summary>
+            Sets the base path of the API client.
+            </summary>
+            <param name="basePath">The base path</param>
+            <value>The base path</value>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.GetBasePath(System.String)">
+            <summary>
+            Gets the base path of the API client.
+            </summary>
+            <param name="basePath">The base path</param>
+            <value>The base path</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Api.DpscanApi.ApiClient">
+            <summary>
+            Gets or sets the API client.
+            </summary>
+            <value>An instance of the ApiClient</value>
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.GetAccount(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get accounts info by address 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <returns>Account</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.GetBlock(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get blocks info by blocknumber 
+            </summary>
+            <param name="platform"></param> 
+            <param name="blockNumber"></param> 
+            <returns>Block</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.GetTokens(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get token info by token address 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <returns>Token</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.GetTransaction(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get transactions info by transactionHash 
+            </summary>
+            <param name="platform"></param> 
+            <param name="transactionHash"></param> 
+            <returns>Transaction</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.GetValidator(Org.OpenAPITools.Model.Platform,System.String)">
+            <summary>
+            Get validator info by address 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <returns>ValidatorSummary</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListAccountTokenTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List account token transactions info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <param name="pageIndex"></param> 
+            <returns>AccountTokenTransactionSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListAccountTokens(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List account token info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <param name="pageIndex"></param> 
+            <returns>AccountTokenSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListAccountTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List account transactions info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <param name="pageIndex"></param> 
+            <returns>AccountTransactionSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListBlocks(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List blocks info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="pageIndex"></param> 
+            <returns>BlockSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListTokenHolders(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List token holder info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <param name="pageIndex"></param> 
+            <returns>TokenHolderSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListTokenTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List  token transactions info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <param name="pageIndex"></param> 
+            <returns>TokenTransactionSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListTokens(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List tokens info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="pageIndex"></param> 
+            <returns>TokenSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListTransactions(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List transactions info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="pageIndex"></param> 
+            <returns>TransactionSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListTransactionsBlock(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List transactions info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="blockNumber"></param> 
+            <param name="pageIndex"></param> 
+            <returns>TransactionSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListValidatorTransactions(Org.OpenAPITools.Model.Platform,System.String,System.Nullable{System.Int64})">
+            <summary>
+            List validator transactions info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="address"></param> 
+            <param name="pageIndex"></param> 
+            <returns>ValidatorTransactionSummaryResponse</returns>            
+        </member>
+        <member name="M:Org.OpenAPITools.Api.DpscanApi.ListValidators(Org.OpenAPITools.Model.Platform,System.Nullable{System.Int64})">
+            <summary>
+            List validator info by page 
+            </summary>
+            <param name="platform"></param> 
+            <param name="pageIndex"></param> 
+            <returns>ValidatorSummaryResponse</returns>            
+        </member>
+        <member name="T:Org.OpenAPITools.Client.ApiClient">
+            <summary>
+            API client is mainly responible for making the HTTP call to the API backend.
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Org.OpenAPITools.Client.ApiClient" /> class.
+            </summary>
+            <param name="basePath">The base path.</param>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.ApiClient.BasePath">
+            <summary>
+            Gets or sets the base path.
+            </summary>
+            <value>The base path</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.ApiClient.RestClient">
+            <summary>
+            Gets or sets the RestClient.
+            </summary>
+            <value>An instance of the RestClient</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.ApiClient.DefaultHeader">
+            <summary>
+            Gets the default header.
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.CallApi(System.String,RestSharp.Method,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,RestSharp.FileParameter},System.String[])">
+            <summary>
+            Makes the HTTP request (Sync).
+            </summary>
+            <param name="path">URL path.</param>
+            <param name="method">HTTP method.</param>
+            <param name="queryParams">Query parameters.</param>
+            <param name="postBody">HTTP body (POST request).</param>
+            <param name="headerParams">Header parameters.</param>
+            <param name="formParams">Form parameters.</param>
+            <param name="fileParams">File parameters.</param>
+            <param name="authSettings">Authentication settings.</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.AddDefaultHeader(System.String,System.String)">
+            <summary>
+            Add default header.
+            </summary>
+            <param name="key">Header field name.</param>
+            <param name="value">Header field value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.EscapeString(System.String)">
+            <summary>
+            Escape string (url-encoded).
+            </summary>
+            <param name="str">String to be escaped.</param>
+            <returns>Escaped string.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.ParameterToFile(System.String,System.IO.Stream)">
+            <summary>
+            Create FileParameter based on Stream.
+            </summary>
+            <param name="name">Parameter name.</param>
+            <param name="stream">Input stream.</param>
+            <returns>FileParameter.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.ParameterToString(System.Object)">
+            <summary>
+            If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
+            If parameter is a list of string, join the list with ",".
+            Otherwise just return the string.
+            </summary>
+            <param name="obj">The parameter (header, path, query, form).</param>
+            <returns>Formatted string.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.Deserialize(System.String,System.Type,System.Collections.Generic.IList{RestSharp.Parameter})">
+            <summary>
+            Deserialize the JSON string into a proper object.
+            </summary>
+            <param name="content">HTTP body (e.g. string, JSON).</param>
+            <param name="type">Object type.</param>
+            <param name="headers">HTTP headers.</param>
+            <returns>Object representation of the JSON string.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.Serialize(System.Object)">
+            <summary>
+            Serialize an object into JSON string.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>JSON string.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.GetApiKeyWithPrefix(System.String)">
+            <summary>
+            Get the API key with prefix.
+            </summary>
+            <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
+            <returns>API key with prefix.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.UpdateParamsForAuth(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String[])">
+            <summary>
+            Update parameters based on authentication.
+            </summary>
+            <param name="queryParams">Query parameters.</param>
+            <param name="headerParams">Header parameters.</param>
+            <param name="authSettings">Authentication settings.</param>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.Base64Encode(System.String)">
+            <summary>
+            Encode string in base64 format.
+            </summary>
+            <param name="text">String to be encoded.</param>
+            <returns>Encoded string.</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiClient.ConvertType(System.Object,System.Type)">
+            <summary>
+            Dynamically cast the object into target type.
+            </summary>
+            <param name="fromObject">Object to be casted</param>
+            <param name="toObject">Target type</param>
+            <returns>Casted object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Client.ApiException">
+            <summary>
+            API Exception
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.ApiException.ErrorCode">
+            <summary>
+            Gets or sets the error code (HTTP status code)
+            </summary>
+            <value>The error code (HTTP status code).</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.ApiException.ErrorContent">
+            <summary>
+            Gets or sets the error content (body json object)
+            </summary>
+            <value>The error content (Http response body).</value>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Org.OpenAPITools.Client.ApiException"/> class.
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Org.OpenAPITools.Client.ApiException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.ApiException.#ctor(System.Int32,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Org.OpenAPITools.Client.ApiException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+            <param name="errorContent">Error content.</param>
+        </member>
+        <member name="T:Org.OpenAPITools.Client.Configuration">
+            <summary>
+            Represents a set of configuration settings
+            </summary>
+        </member>
+        <member name="F:Org.OpenAPITools.Client.Configuration.Version">
+            <summary>
+            Version of the package.
+            </summary>
+            <value>Version of the package.</value>
+        </member>
+        <member name="F:Org.OpenAPITools.Client.Configuration.DefaultApiClient">
+            <summary>
+            Gets or sets the default API client for making HTTP calls.
+            </summary>
+            <value>The API client.</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.Configuration.Username">
+            <summary>
+            Gets or sets the username (HTTP basic authentication).
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.Configuration.Password">
+            <summary>
+            Gets or sets the password (HTTP basic authentication).
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="F:Org.OpenAPITools.Client.Configuration.ApiKey">
+            <summary>
+            Gets or sets the API key based on the authentication name.
+            </summary>
+            <value>The API key.</value>
+        </member>
+        <member name="F:Org.OpenAPITools.Client.Configuration.ApiKeyPrefix">
+            <summary>
+            Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
+            </summary>
+            <value>The prefix of the API key.</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.Configuration.TempFolderPath">
+            <summary>
+            Gets or sets the temporary folder path to store the files downloaded from the server.
+            </summary>
+            <value>Folder path.</value>
+        </member>
+        <member name="P:Org.OpenAPITools.Client.Configuration.DateTimeFormat">
+            <summary>
+            Gets or sets the date time format used when serializing in the ApiClient
+            By default, it's set to ISO 8601 - "o", for others see:
+            https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx
+            and https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
+            No validation is done to ensure that the string you're providing is valid
+            </summary>
+            <value>The DateTimeFormat string</value>
+        </member>
+        <member name="M:Org.OpenAPITools.Client.Configuration.ToDebugReport">
+            <summary>
+            Returns a string with essential information for debugging.
+            </summary>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Account.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Account.Balance">
+            <summary>
+            Gets or Sets Balance
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Account.TxnCount">
+            <summary>
+            Gets or Sets TxnCount
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Account.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Account.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AccountTokenSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenSummary.AccountAddress">
+            <summary>
+            Gets or Sets AccountAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenSummary.TokenAddress">
+            <summary>
+            Gets or Sets TokenAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenSummary.Balance">
+            <summary>
+            Gets or Sets Balance
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AccountTokenSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AccountTokenTransactionSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.TokenAddress">
+            <summary>
+            Gets or Sets TokenAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.TxnHash">
+            <summary>
+            Gets or Sets TxnHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.Method">
+            <summary>
+            Gets or Sets Method
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.FromAddress">
+            <summary>
+            Gets or Sets FromAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.ToAddress">
+            <summary>
+            Gets or Sets ToAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.TxnFee">
+            <summary>
+            Gets or Sets TxnFee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummary.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenTransactionSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenTransactionSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AccountTokenTransactionSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTokenTransactionSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenTransactionSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTokenTransactionSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AccountTransactionSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.TxnHash">
+            <summary>
+            Gets or Sets TxnHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.Method">
+            <summary>
+            Gets or Sets Method
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.FromAddress">
+            <summary>
+            Gets or Sets FromAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.ToAddress">
+            <summary>
+            Gets or Sets ToAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.TxnFee">
+            <summary>
+            Gets or Sets TxnFee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.TokenAddress">
+            <summary>
+            Gets or Sets TokenAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.TransactionType">
+            <summary>
+            Gets or Sets TransactionType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummary.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTransactionSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTransactionSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AccountTransactionSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AccountTransactionSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTransactionSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AccountTransactionSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AutoCompleteDetail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.PlatformType">
+            <summary>
+            Gets or Sets PlatformType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.Image">
+            <summary>
+            Gets or Sets Image
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.Fee">
+            <summary>
+            Gets or Sets Fee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.Holders">
+            <summary>
+            Gets or Sets Holders
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteDetail.TotalTx">
+            <summary>
+            Gets or Sets TotalTx
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AutoCompleteDetail.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AutoCompleteDetail.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.AutoCompleteResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteResponse.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteResponse.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteResponse.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.AutoCompleteResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AutoCompleteResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.AutoCompleteResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.ParentHash">
+            <summary>
+            Gets or Sets ParentHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.Nonce">
+            <summary>
+            Gets or Sets Nonce
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.Sha3Uncles">
+            <summary>
+            Gets or Sets Sha3Uncles
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.LogsBloom">
+            <summary>
+            Gets or Sets LogsBloom
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.TransactionsRoot">
+            <summary>
+            Gets or Sets TransactionsRoot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.StateRoot">
+            <summary>
+            Gets or Sets StateRoot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.ReceiptsRoot">
+            <summary>
+            Gets or Sets ReceiptsRoot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.BlockProducer">
+            <summary>
+            Gets or Sets BlockProducer
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.BlockProposer">
+            <summary>
+            Gets or Sets BlockProposer
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.Reward">
+            <summary>
+            Gets or Sets Reward
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.MixHash">
+            <summary>
+            Gets or Sets MixHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.ExtraData">
+            <summary>
+            Gets or Sets ExtraData
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.Size">
+            <summary>
+            Gets or Sets Size
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.GasLimit">
+            <summary>
+            Gets or Sets GasLimit
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.GasUsed">
+            <summary>
+            Gets or Sets GasUsed
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.BaseFeePerGas">
+            <summary>
+            Gets or Sets BaseFeePerGas
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Block.TxnCount">
+            <summary>
+            Gets or Sets TxnCount
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Block.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Block.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.BlockSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.ParentHash">
+            <summary>
+            Gets or Sets ParentHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.Nonce">
+            <summary>
+            Gets or Sets Nonce
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.Sha3Uncles">
+            <summary>
+            Gets or Sets Sha3Uncles
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.LogsBloom">
+            <summary>
+            Gets or Sets LogsBloom
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.TransactionsRoot">
+            <summary>
+            Gets or Sets TransactionsRoot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.StateRoot">
+            <summary>
+            Gets or Sets StateRoot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.ReceiptsRoot">
+            <summary>
+            Gets or Sets ReceiptsRoot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.BlockProducer">
+            <summary>
+            Gets or Sets BlockProducer
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.BlockProposer">
+            <summary>
+            Gets or Sets BlockProposer
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.Reward">
+            <summary>
+            Gets or Sets Reward
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.MixHash">
+            <summary>
+            Gets or Sets MixHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.ExtraData">
+            <summary>
+            Gets or Sets ExtraData
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.Size">
+            <summary>
+            Gets or Sets Size
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.GasLimit">
+            <summary>
+            Gets or Sets GasLimit
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.GasUsed">
+            <summary>
+            Gets or Sets GasUsed
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummary.BaseFeePerGas">
+            <summary>
+            Gets or Sets BaseFeePerGas
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.BlockSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.BlockSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.BlockSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.BlockSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.BlockSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.BlockSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Candle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candle.Close">
+            <summary>
+            Gets or Sets Close
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candle.High">
+            <summary>
+            Gets or Sets High
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candle.Low">
+            <summary>
+            Gets or Sets Low
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candle.Open">
+            <summary>
+            Gets or Sets Open
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candle.Time">
+            <summary>
+            Gets or Sets Time
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candle.Volume">
+            <summary>
+            Gets or Sets Volume
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Candle.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Candle.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Candles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candles.OldestTs">
+            <summary>
+            Gets or Sets OldestTs
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candles.Symbol">
+            <summary>
+            Gets or Sets Symbol
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Candles.Items">
+            <summary>
+            Gets or Sets Items
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Candles.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Candles.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.CandlesResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.CandlesResponse.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.CandlesResponse.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.CandlesResponse.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.CandlesResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.CandlesResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.CandlesResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.ErrorResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ErrorResponseModel.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ErrorResponseModel.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ErrorResponseModel.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ErrorResponseModel.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.HotPair">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPair.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPair.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPair.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPair.Platform">
+            <summary>
+            Gets or Sets Platform
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.HotPair.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.HotPair.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.HotPairs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPairs.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPairs.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPairs.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.HotPairs.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.HotPairs.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.HotPairs.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.LargeSwapDetail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.CreatedAtTimestamp">
+            <summary>
+            Gets or Sets CreatedAtTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.Type">
+            <summary>
+            Gets or Sets Type
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.Quantity">
+            <summary>
+            Gets or Sets Quantity
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.TotalETH">
+            <summary>
+            Gets or Sets TotalETH
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.TotalUSD">
+            <summary>
+            Gets or Sets TotalUSD
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.TxnId">
+            <summary>
+            Gets or Sets TxnId
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwapDetail.Percent">
+            <summary>
+            Gets or Sets Percent
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.LargeSwapDetail.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.LargeSwapDetail.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.LargeSwaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwaps.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwaps.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwaps.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.LargeSwaps.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.LargeSwaps.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.LargeSwaps.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.NewPairs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.UpdatedAtTimestamp">
+            <summary>
+            Gets or Sets UpdatedAtTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.PlatformType">
+            <summary>
+            Gets or Sets PlatformType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.PriceUSD">
+            <summary>
+            Gets or Sets PriceUSD
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.TotalLiquidity">
+            <summary>
+            Gets or Sets TotalLiquidity
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.PoolAmount">
+            <summary>
+            Gets or Sets PoolAmount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.PoolVariation">
+            <summary>
+            Gets or Sets PoolVariation
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.PoolRemining">
+            <summary>
+            Gets or Sets PoolRemining
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.CreatedAtTimestamp">
+            <summary>
+            Gets or Sets CreatedAtTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairs.CreatedTx">
+            <summary>
+            Gets or Sets CreatedTx
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.NewPairs.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.NewPairs.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.NewPairsResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairsResponse.Creates">
+            <summary>
+            Gets or Sets Creates
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.NewPairsResponse.Updates">
+            <summary>
+            Gets or Sets Updates
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.NewPairsResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.NewPairsResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.PairInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.Image">
+            <summary>
+            Gets or Sets Image
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.PlatformType">
+            <summary>
+            Gets or Sets PlatformType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.TotalLiquidity">
+            <summary>
+            Gets or Sets TotalLiquidity
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.DailyVolume">
+            <summary>
+            Gets or Sets DailyVolume
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.PooledToken0">
+            <summary>
+            Gets or Sets PooledToken0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.PooledToken1">
+            <summary>
+            Gets or Sets PooledToken1
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.TotalTx">
+            <summary>
+            Gets or Sets TotalTx
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.Holders">
+            <summary>
+            Gets or Sets Holders
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.MarketCap">
+            <summary>
+            Gets or Sets MarketCap
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.DilutedMarketCap">
+            <summary>
+            Gets or Sets DilutedMarketCap
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.Fee">
+            <summary>
+            Gets or Sets Fee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.PriceUSD">
+            <summary>
+            Gets or Sets PriceUSD
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.PriceETH">
+            <summary>
+            Gets or Sets PriceETH
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.Percent24h">
+            <summary>
+            Gets or Sets Percent24h
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfo.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PairInfo.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PairInfo.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.PairInfoResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfoResponse.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfoResponse.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfoResponse.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairInfoResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PairInfoResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PairInfoResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.PairSearchResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairSearchResult.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PairSearchResult.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PairSearchResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PairSearchResult.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Price.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Price.CurrencyOut">
+            <summary>
+            Gets or Sets CurrencyOut
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Price.Timestamp">
+            <summary>
+            Gets or Sets Timestamp
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Price.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Price.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.PriceResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PriceResponse.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PriceResponse.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PriceResponse.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.PriceResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PriceResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.PriceResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Receipt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.Type">
+            <summary>
+            Gets or Sets Type
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.LogsBloom">
+            <summary>
+            Gets or Sets LogsBloom
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.ContractAddress">
+            <summary>
+            Gets or Sets ContractAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.GasUsed">
+            <summary>
+            Gets or Sets GasUsed
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.CumulativeGasUsed">
+            <summary>
+            Gets or Sets CumulativeGasUsed
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Receipt.EffectiveGasPrice">
+            <summary>
+            Gets or Sets EffectiveGasPrice
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Receipt.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Receipt.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.SearchResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.SearchResult.Title">
+            <summary>
+            Gets or Sets Title
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.SearchResult.SearchResultType">
+            <summary>
+            Gets or Sets SearchResultType
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.SearchResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.SearchResult.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.SearchResults">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.SearchResults.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.SearchResults.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.SearchResults.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.SearchResults.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.SearchResults.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.SearchResults.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.SearchResultType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.SearchResultType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.SearchResultType.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Token">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Token.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Token.Symbol">
+            <summary>
+            Gets or Sets Symbol
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Token.Name">
+            <summary>
+            Gets or Sets Name
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Token.Decimals">
+            <summary>
+            Gets or Sets Decimals
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Token.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Token.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenHolderSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenHolderSummary.HolderAddress">
+            <summary>
+            Gets or Sets HolderAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenHolderSummary.TokenAddress">
+            <summary>
+            Gets or Sets TokenAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenHolderSummary.Balance">
+            <summary>
+            Gets or Sets Balance
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenHolderSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenHolderSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenHolderSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenHolderSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenHolderSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenHolderSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenHolderSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenSearchResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSearchResult.Token">
+            <summary>
+            Gets or Sets Token
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenSearchResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenSearchResult.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSummary.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSummary.Symbol">
+            <summary>
+            Gets or Sets Symbol
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSummary.Name">
+            <summary>
+            Gets or Sets Name
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSummary.Decimals">
+            <summary>
+            Gets or Sets Decimals
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenTransactionSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.TokenAddress">
+            <summary>
+            Gets or Sets TokenAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.TransactionHash">
+            <summary>
+            Gets or Sets TransactionHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.MessageSenderAddress">
+            <summary>
+            Gets or Sets MessageSenderAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.FromAddress">
+            <summary>
+            Gets or Sets FromAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.ToAddress">
+            <summary>
+            Gets or Sets ToAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.Index">
+            <summary>
+            Gets or Sets Index
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.TxnFee">
+            <summary>
+            Gets or Sets TxnFee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummary.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenTransactionSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenTransactionSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TokenTransactionSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TokenTransactionSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenTransactionSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TokenTransactionSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TradeAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeAction.Bot">
+            <summary>
+            Gets or Sets Bot
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeAction.TradeTotal">
+            <summary>
+            Gets or Sets TradeTotal
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeAction.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeAction.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TradeHistory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistory.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistory.Token0">
+            <summary>
+            Gets or Sets Token0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistory.Token1">
+            <summary>
+            Gets or Sets Token1
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeHistory.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeHistory.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TradeHistoryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistoryResponse.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistoryResponse.Status">
+            <summary>
+            Gets or Sets Status
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistoryResponse.LastUpdateTimestamp">
+            <summary>
+            Gets or Sets LastUpdateTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeHistoryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeHistoryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeHistoryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TradeItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.Type">
+            <summary>
+            Gets or Sets Type
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.Maker">
+            <summary>
+            Gets or Sets Maker
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.Timestamp">
+            <summary>
+            Gets or Sets Timestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.Price">
+            <summary>
+            Gets or Sets Price
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.PriceETH">
+            <summary>
+            Gets or Sets PriceETH
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.AmountETH">
+            <summary>
+            Gets or Sets AmountETH
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.AmountToken0">
+            <summary>
+            Gets or Sets AmountToken0
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.AmountToken1">
+            <summary>
+            Gets or Sets AmountToken1
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeItem.Others">
+            <summary>
+            Gets or Sets Others
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeItem.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeItem.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TradeTotalTx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeTotalTx.Total">
+            <summary>
+            Gets or Sets Total
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeTotalTx.BuysCount">
+            <summary>
+            Gets or Sets BuysCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeTotalTx.SellsCount">
+            <summary>
+            Gets or Sets SellsCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeTotalTx.BuysPrice">
+            <summary>
+            Gets or Sets BuysPrice
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TradeTotalTx.SellsPrice">
+            <summary>
+            Gets or Sets SellsPrice
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeTotalTx.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeTotalTx.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TradeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TradeType.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.Transaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.TransactionHash">
+            <summary>
+            Gets or Sets TransactionHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.MessageSenderAddress">
+            <summary>
+            Gets or Sets MessageSenderAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.FromAddress">
+            <summary>
+            Gets or Sets FromAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.ToAddress">
+            <summary>
+            Gets or Sets ToAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.Index">
+            <summary>
+            Gets or Sets Index
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.TxnFee">
+            <summary>
+            Gets or Sets TxnFee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.ContractAddress">
+            <summary>
+            Gets or Sets ContractAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.TransactionType">
+            <summary>
+            Gets or Sets TransactionType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.Transaction.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Transaction.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.Transaction.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TransactionSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.TransactionHash">
+            <summary>
+            Gets or Sets TransactionHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.MessageSenderAddress">
+            <summary>
+            Gets or Sets MessageSenderAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.FromAddress">
+            <summary>
+            Gets or Sets FromAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.ToAddress">
+            <summary>
+            Gets or Sets ToAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.Index">
+            <summary>
+            Gets or Sets Index
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.TxnFee">
+            <summary>
+            Gets or Sets TxnFee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.ContractAddress">
+            <summary>
+            Gets or Sets ContractAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.TransactionType">
+            <summary>
+            Gets or Sets TransactionType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummary.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TransactionSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TransactionSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.TransactionSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.TransactionSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TransactionSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.TransactionSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="F:Org.OpenAPITools.Model.TransactionType.CoinTransfer">
+            <summary>
+            Enum CoinTransfer for Coin
+            </summary>
+        </member>
+        <member name="F:Org.OpenAPITools.Model.TransactionType.NewToken">
+            <summary>
+            Enum NewToken for NewToken
+            </summary>
+        </member>
+        <member name="F:Org.OpenAPITools.Model.TransactionType.TokenTransfer">
+            <summary>
+            Enum TokenTransfer for Token
+            </summary>
+        </member>
+        <member name="F:Org.OpenAPITools.Model.TransactionType.NewSmartContract">
+            <summary>
+            Enum NewSmartContract for NewSmartContract
+            </summary>
+        </member>
+        <member name="F:Org.OpenAPITools.Model.TransactionType.SmartContract">
+            <summary>
+            Enum SmartContract for SmartContract
+            </summary>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.UpdatedPairs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.UpdatedAtTimestamp">
+            <summary>
+            Gets or Sets UpdatedAtTimestamp
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.PlatformType">
+            <summary>
+            Gets or Sets PlatformType
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.PriceUSD">
+            <summary>
+            Gets or Sets PriceUSD
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.TotalLiquidity">
+            <summary>
+            Gets or Sets TotalLiquidity
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.PoolAmount">
+            <summary>
+            Gets or Sets PoolAmount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.PoolVariation">
+            <summary>
+            Gets or Sets PoolVariation
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.UpdatedPairs.PoolRemining">
+            <summary>
+            Gets or Sets PoolRemining
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.UpdatedPairs.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.UpdatedPairs.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.ValidatorSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorSummary.ValidatorAddress">
+            <summary>
+            Gets or Sets ValidatorAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorSummary.Balance">
+            <summary>
+            Gets or Sets Balance
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.ValidatorSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.ValidatorTransactionSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.ContractAddress">
+            <summary>
+            Gets or Sets ContractAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.TxnHash">
+            <summary>
+            Gets or Sets TxnHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.Method">
+            <summary>
+            Gets or Sets Method
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.BlockNumber">
+            <summary>
+            Gets or Sets BlockNumber
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.BlockHash">
+            <summary>
+            Gets or Sets BlockHash
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.CreatedAt">
+            <summary>
+            Gets or Sets CreatedAt
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.FromAddress">
+            <summary>
+            Gets or Sets FromAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.ToAddress">
+            <summary>
+            Gets or Sets ToAddress
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.Value">
+            <summary>
+            Gets or Sets Value
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.TxnFee">
+            <summary>
+            Gets or Sets TxnFee
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummary.Receipt">
+            <summary>
+            Gets or Sets Receipt
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorTransactionSummary.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorTransactionSummary.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="T:Org.OpenAPITools.Model.ValidatorTransactionSummaryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummaryResponse.PageCount">
+            <summary>
+            Gets or Sets PageCount
+            </summary>
+        </member>
+        <member name="P:Org.OpenAPITools.Model.ValidatorTransactionSummaryResponse.Result">
+            <summary>
+            Gets or Sets Result
+            </summary>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorTransactionSummaryResponse.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Org.OpenAPITools.Model.ValidatorTransactionSummaryResponse.ToJson">
+            <summary>
+            Get the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+    </members>
+</doc>
