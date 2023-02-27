@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7+OXI/lQO5DML5QNuyRwHtE4HDdTT80j1z+uxzFiT8a3/dZmXP37gq5OwKMMd0ctMN9WE7SnkKM2RIgyv/tJsQ==",
+  "dgSpecHash": "d5uxbNaIYKNB0Se2p8wTOylVdDQyedp7nTe6uIPNVn2sKJxTPZ1yPI9fBZkW3f41QC57LMJWGvyV/8TCYyE+rA==",
   "success": true,
   "projectFilePath": "C:\\development\\web-assemply-v0.2\\transaction-data-plane\\src\\dp.write.transaction\\dp.write.transaction.csproj",
   "expectedPackageFiles": [

@@ -51,3 +51,4 @@ C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.write.api\bin\Deb
 C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.write.api\bin\Debug\net6.0\dp.write.transaction.pdb
 C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.write.api\bin\Debug\net6.0\dp.write.api.xml
 C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.write.api\obj\Debug\net6.0\dp.write.api.xml
+C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.write.api\bin\Debug\net6.0\appsettings.production.json

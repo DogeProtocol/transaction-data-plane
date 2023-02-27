@@ -70,8 +70,8 @@ namespace dp.read.api
         {
             return new ConfigurationBuilder()
                 .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile("appsettings.development.json", optional: false)
+                //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                //.AddJsonFile("appsettings.development.json", optional: false)
                 .AddJsonFile("appsettings.production.json", optional: true)
                 .AddEnvironmentVariables()
                 .Build();
