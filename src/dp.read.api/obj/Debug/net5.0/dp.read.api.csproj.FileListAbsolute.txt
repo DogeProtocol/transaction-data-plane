@@ -1,7 +1,0 @@
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.csproj.AssemblyReference.cache
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.GeneratedMSBuildEditorConfig.editorconfig
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.AssemblyInfoInputs.cache
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.AssemblyInfo.cs
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.csproj.CoreCompileInputs.cache
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.MvcApplicationPartsAssemblyInfo.cs
-C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\obj\Debug\net5.0\dp.read.api.MvcApplicationPartsAssemblyInfo.cache
