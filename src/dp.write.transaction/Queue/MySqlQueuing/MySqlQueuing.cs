@@ -77,6 +77,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
             {
                 connection.Open();
                 item = MySqlQueuing.GetNextItem(state, connection);
+                connection.Close();
             }
             
             return item;
@@ -129,6 +130,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
                         throw ex;
                     }
                 }
+                connection.Close();
             }
         }
 
@@ -168,6 +170,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
                         throw ex;
                     }
                 }
+                connection.Close();
             }
         }
 

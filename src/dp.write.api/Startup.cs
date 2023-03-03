@@ -36,17 +36,16 @@ namespace dp.write.api
     {
         private readonly IWebHostEnvironment _hostingEnv;
 
-        private IConfiguration Configuration { get; }
+        //private IConfiguration Configuration { get; }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="env"></param>
-        /// <param name="configuration"></param>
-        public Startup(IWebHostEnvironment env, IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
             _hostingEnv = env;
-            Configuration = configuration;
+            //Configuration = configuration;
         }
 
         /// <summary>
@@ -77,8 +76,8 @@ namespace dp.write.api
                   options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
               });
 
-            Dictionary<string, string> conections = new();
-            Configuration.GetSection("ConnectionStrings").Bind(conections);
+            //Dictionary<string, string> conections = new();
+            //Configuration.GetSection("ConnectionStrings").Bind(conections);
 
             services
                    .AddTransient<IQueueService, QueueService>()

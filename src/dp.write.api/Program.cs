@@ -48,7 +48,7 @@ namespace dp.write.api
                  {
                      configuration
                          //.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-                         //.AddJsonFile("appsettings.development.json", optional: false);
+                         //.AddJsonFile("appsettings.development.json", optional: false)
                          .AddJsonFile("appsettings.production.json", optional: true);
                  }
 
