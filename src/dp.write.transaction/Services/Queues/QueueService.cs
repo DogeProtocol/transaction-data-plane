@@ -64,14 +64,14 @@ namespace dp.write.transaction.Services.Queues
         /// </summary>
         /// <param name="key">The key of the item to get.</param>
         /// <returns>The content, or null if none is found.</returns>
-        public T Get<T>(string state)
+        public T? Get<T>(string state)
         {
             var value = queue.GetContent(state);
             if (value != null)
             {
-                return JsonConvert.DeserializeObject<T>(value.ToString());
+                return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(value));
             }
-            return default;
+            return default(T);
         }
         /// <summary>
         /// Disposes of resources used by this instance.

@@ -5,6 +5,8 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics.Metrics;
 using dp.write.transaction.Entities;
 using dp.write.transaction;
+using dp.write.transaction.Services.Queues;
+using dp.write.transaction.Services.Transactions;
 
 namespace dp.write.transaction.worker
 {
@@ -63,8 +65,10 @@ namespace dp.write.transaction.worker
         private static IServiceCollection ConfigureServices()
         {
             IServiceCollection services = new ServiceCollection();
-            services.AddTransient<IWorker>(ctx =>
-                        new Worker(ctx.GetService<ILogger<Worker>>(), ctx.GetService<IServiceProvider>()));
+            services.AddTransient<IQueueService, QueueService>()
+                .AddTransient<ITransactionService, TransactionService>()
+                .AddTransient<IWorker>(ctx =>
+                        new Worker(ctx.GetService<IServiceProvider>()));
             return services;
         }
 
@@ -81,17 +85,25 @@ namespace dp.write.transaction.worker
 
         private static async Task Transaction()
         {
+            Console.WriteLine("Transaction start");
             while (true)
             {
                 // Recomended try catch
                 try
-                {
+                {                   
+                    //Console.WriteLine(" Worker - 1");
                     IWorker service =  serviceProvider.GetRequiredService<IWorker>();
-                    await service.TransactionSyncAsync();
+                    //Console.WriteLine(" Worker - 2");
+                    Task t = service.TransactionSyncAsync();
+                    //Console.WriteLine(" Worker - 3");
+                    t.Wait();
+                    //Console.WriteLine(" Worker - 4");
                     await Task.Delay(SLEEP_TIME);
+                    //Console.WriteLine(" Worker - 5");
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message + " " + ex.InnerException + " " + ex.StackTrace + " " + ex.ToString());
                     await Task.Delay(SLEEP_TIME);
                 }
             }

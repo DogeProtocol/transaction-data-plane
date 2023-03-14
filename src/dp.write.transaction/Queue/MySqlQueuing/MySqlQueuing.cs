@@ -5,6 +5,7 @@ using System.Data;
 using System.Globalization;
 using System.Diagnostics;
 using MySqlConnector;
+using Nethereum.Model;
 
 namespace dp.write.transaction.Queue.MySqlCaching
 {
@@ -65,22 +66,20 @@ namespace dp.write.transaction.Queue.MySqlCaching
             this.MarkContentImpl(id, state);
         }
 
-        public QueueItem GetContent(string state)
+        public QueueItem? GetContent(string state)
         {
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
+            // var stopwatch = new Stopwatch();
+            // stopwatch.Start();
+            //string content = null;
 
-            string content = null;
-            QueueItem item;
-
+            QueueItem? item;
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
                 item = MySqlQueuing.GetNextItem(state, connection);
                 connection.Close();
+                return item;
             }
-            
-            return item;
         }
 
         private void AddContentImpl(string id, object jsondocument, object dateadded, object state)
@@ -174,7 +173,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
             }
         }
 
-        private static QueueItem GetNextItem(string state,  MySqlConnection connection)
+        private static QueueItem? GetNextItem(string state,  MySqlConnection connection)
         {
             try
             {
@@ -201,10 +200,9 @@ namespace dp.write.transaction.Queue.MySqlCaching
                             return c;
                         }
                     }
-
                 }
 
-                return null;
+                return default(QueueItem);
             }
             catch (Exception ex)
             {

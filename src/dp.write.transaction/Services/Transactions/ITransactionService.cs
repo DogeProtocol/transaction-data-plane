@@ -8,6 +8,6 @@ namespace dp.write.transaction.Services.Transactions
     /// </summary>
     public partial interface ITransactionService
     {
-        Task<string> SendTransactionAsync(string txData);
+        Task<string> SendTransactionAsync(string id,string txData);
     }
 }

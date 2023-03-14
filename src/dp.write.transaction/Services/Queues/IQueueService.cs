@@ -26,8 +26,6 @@ namespace dp.write.transaction.Services.Queues
         /// </summary>
         /// <param name="id">The id of the item to get.</param>
         /// <returns>The jsondocument, or null if none is found.</returns>
-        T Get<T>(string state);
-
-
+        T? Get<T>(string state);
     }
 }
