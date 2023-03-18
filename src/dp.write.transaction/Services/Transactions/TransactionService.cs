@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
+using Nethereum.Contracts.QueryHandlers.MultiCall;
 
 namespace dp.write.transaction.Services.Transactions
 {
@@ -73,9 +74,8 @@ namespace dp.write.transaction.Services.Transactions
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
+                Console.WriteLine(result);
             }
-
-            Console.WriteLine(httpResponse.StatusCode);
 
             return httpResponse.StatusCode.ToString();
 

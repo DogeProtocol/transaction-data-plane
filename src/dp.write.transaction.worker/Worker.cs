@@ -34,7 +34,6 @@ namespace dp.write.transaction.worker
             if (result != null)
             {
                 Console.WriteLine("result.JsonDocument : " + result.JsonDocument);
-
                 //Begin
                 ITransactionService transactionService = _serviceProvider.GetRequiredService<ITransactionService>();
                 var responsePharse = await transactionService.SendTransactionAsync(result.Id, result.JsonDocument);
