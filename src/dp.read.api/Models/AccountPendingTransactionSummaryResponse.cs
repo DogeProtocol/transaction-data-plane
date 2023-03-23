@@ -22,31 +22,19 @@ namespace dp.read.api.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class Balance : IEquatable<Balance>
+    public partial class AccountPendingTransactionSummaryResponse : IEquatable<AccountPendingTransactionSummaryResponse>
     { 
         /// <summary>
-        /// Gets or Sets _Balance
+        /// Gets or Sets PageCount
         /// </summary>
-        [DataMember(Name="balance")]
-        public Object _Balance { get; set; }
+        [DataMember(Name="pageCount")]
+        public int? PageCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nonce
+        /// Gets or Sets Result
         /// </summary>
-        [DataMember(Name="nonce")]
-        public Object Nonce { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BlockNumber
-        /// </summary>
-        [DataMember(Name="blockNumber")]
-        public double? BlockNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BlockDate
-        /// </summary>
-        [DataMember(Name="blockDate")]
-        public DateTime? BlockDate { get; set; }
+        [DataMember(Name="result")]
+        public List<AccountPendingTransactionSummary> Result { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,11 +43,9 @@ namespace dp.read.api.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Balance {\n");
-            sb.Append("  _Balance: ").Append(_Balance).Append("\n");
-            sb.Append("  Nonce: ").Append(Nonce).Append("\n");
-            sb.Append("  BlockNumber: ").Append(BlockNumber).Append("\n");
-            sb.Append("  BlockDate: ").Append(BlockDate).Append("\n");
+            sb.Append("class AccountPendingTransactionSummaryResponse {\n");
+            sb.Append("  PageCount: ").Append(PageCount).Append("\n");
+            sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,39 +68,29 @@ namespace dp.read.api.Models
         {
             if (obj is null) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((Balance)obj);
+            return obj.GetType() == GetType() && Equals((AccountPendingTransactionSummaryResponse)obj);
         }
 
         /// <summary>
-        /// Returns true if Balance instances are equal
+        /// Returns true if AccountPendingTransactionSummaryResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of Balance to be compared</param>
+        /// <param name="other">Instance of AccountPendingTransactionSummaryResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Balance other)
+        public bool Equals(AccountPendingTransactionSummaryResponse other)
         {
             if (other is null) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    _Balance == other._Balance ||
-                    _Balance != null &&
-                    _Balance.Equals(other._Balance)
+                    PageCount == other.PageCount ||
+                    PageCount != null &&
+                    PageCount.Equals(other.PageCount)
                 ) && 
                 (
-                    Nonce == other.Nonce ||
-                    Nonce != null &&
-                    Nonce.Equals(other.Nonce)
-                ) && 
-                (
-                    BlockNumber == other.BlockNumber ||
-                    BlockNumber != null &&
-                    BlockNumber.Equals(other.BlockNumber)
-                ) && 
-                (
-                    BlockDate == other.BlockDate ||
-                    BlockDate != null &&
-                    BlockDate.Equals(other.BlockDate)
+                    Result == other.Result ||
+                    Result != null &&
+                    Result.SequenceEqual(other.Result)
                 );
         }
 
@@ -128,14 +104,10 @@ namespace dp.read.api.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (_Balance != null)
-                    hashCode = hashCode * 59 + _Balance.GetHashCode();
-                    if (Nonce != null)
-                    hashCode = hashCode * 59 + Nonce.GetHashCode();
-                    if (BlockNumber != null)
-                    hashCode = hashCode * 59 + BlockNumber.GetHashCode();
-                    if (BlockDate != null)
-                    hashCode = hashCode * 59 + BlockDate.GetHashCode();
+                    if (PageCount != null)
+                    hashCode = hashCode * 59 + PageCount.GetHashCode();
+                    if (Result != null)
+                    hashCode = hashCode * 59 + Result.GetHashCode();
                 return hashCode;
             }
         }
@@ -143,12 +115,12 @@ namespace dp.read.api.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(Balance left, Balance right)
+        public static bool operator ==(AccountPendingTransactionSummaryResponse left, AccountPendingTransactionSummaryResponse right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(Balance left, Balance right)
+        public static bool operator !=(AccountPendingTransactionSummaryResponse left, AccountPendingTransactionSummaryResponse right)
         {
             return !Equals(left, right);
         }

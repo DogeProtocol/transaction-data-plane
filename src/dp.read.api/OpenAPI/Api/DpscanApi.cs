@@ -47,6 +47,14 @@ namespace Org.OpenAPITools.Api
         /// <returns>ValidatorSummary</returns>
         ValidatorSummary GetValidator (Platform platform, string address);
         /// <summary>
+        /// List account pending transactions info by page 
+        /// </summary>
+        /// <param name="platform"></param>
+        /// <param name="address"></param>
+        /// <param name="pageIndex"></param>
+        /// <returns>AccountPendingTransactionSummaryResponse</returns>
+        AccountPendingTransactionSummaryResponse ListAccountPendingTransactions (Platform platform, string address, long? pageIndex);
+        /// <summary>
         /// List account token transactions info by page 
         /// </summary>
         /// <param name="platform"></param>
@@ -396,6 +404,53 @@ path = path.Replace("{" + "address" + "}", ApiClient.ParameterToString(address))
         }
     
         /// <summary>
+        /// List account pending transactions info by page 
+        /// </summary>
+        /// <param name="platform"></param> 
+        /// <param name="address"></param> 
+        /// <param name="pageIndex"></param> 
+        /// <returns>AccountPendingTransactionSummaryResponse</returns>            
+        public AccountPendingTransactionSummaryResponse ListAccountPendingTransactions (Platform platform, string address, long? pageIndex)
+        {
+            
+            // verify the required parameter 'platform' is set
+            if (platform == null) throw new ApiException(400, "Missing required parameter 'platform' when calling ListAccountPendingTransactions");
+            
+            // verify the required parameter 'address' is set
+            if (address == null) throw new ApiException(400, "Missing required parameter 'address' when calling ListAccountPendingTransactions");
+            
+            // verify the required parameter 'pageIndex' is set
+            if (pageIndex == null) throw new ApiException(400, "Missing required parameter 'pageIndex' when calling ListAccountPendingTransactions");
+            
+    
+            var path = "/api/{platform}/accounts/{address}/pendingtransactions/page/{pageIndex}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "platform" + "}", ApiClient.ParameterToString(platform));
+path = path.Replace("{" + "address" + "}", ApiClient.ParameterToString(address));
+path = path.Replace("{" + "pageIndex" + "}", ApiClient.ParameterToString(pageIndex));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "Bearer" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling ListAccountPendingTransactions: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling ListAccountPendingTransactions: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (AccountPendingTransactionSummaryResponse) ApiClient.Deserialize(response.Content, typeof(AccountPendingTransactionSummaryResponse), response.Headers);
+        }
+    
+        /// <summary>
         /// List account token transactions info by page 
         /// </summary>
         /// <param name="platform"></param> 
@@ -705,6 +760,7 @@ path = path.Replace("{" + "pageIndex" + "}", ApiClient.ParameterToString(pageInd
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling ListTokens: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)

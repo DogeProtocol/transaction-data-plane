@@ -27,6 +27,13 @@ namespace Org.OpenAPITools.Model {
     public string Balance { get; set; }
 
     /// <summary>
+    /// Gets or Sets Nonce
+    /// </summary>
+    [DataMember(Name="nonce", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "nonce")]
+    public string Nonce { get; set; }
+
+    /// <summary>
     /// Gets or Sets TxnCount
     /// </summary>
     [DataMember(Name="txnCount", EmitDefaultValue=false)]
@@ -43,6 +50,7 @@ namespace Org.OpenAPITools.Model {
       sb.Append("class Account {\n");
       sb.Append("  Address: ").Append(Address).Append("\n");
       sb.Append("  Balance: ").Append(Balance).Append("\n");
+      sb.Append("  Nonce: ").Append(Nonce).Append("\n");
       sb.Append("  TxnCount: ").Append(TxnCount).Append("\n");
       sb.Append("}\n");
       return sb.ToString();

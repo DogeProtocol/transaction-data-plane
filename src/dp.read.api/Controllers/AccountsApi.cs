@@ -60,6 +60,7 @@ namespace dp.read.api.Controllers
 
             Balance balance = new Balance();
             balance._Balance =(string) result.Balance;
+            balance.Nonce = (string)result.Nonce;
             balance.BlockDate = null;
             balance.BlockNumber = null;
 
@@ -67,6 +68,52 @@ namespace dp.read.api.Controllers
             balanceResponse.Result = balance;
 
             return Ok(balanceResponse);
+        }
+
+        /// <summary>
+        /// List account pending transactions info by page
+        /// </summary>
+        /// <param name="address">the string representing the address</param>
+        /// <param name="pageIndex">the interger representing page number</param>
+        /// <response code="200">Success</response>
+        /// <response code="404">Not Found</response>
+        /// <response code="429">Client Error</response>
+        /// <response code="503">Server Error</response>
+        [HttpGet]
+        [Route("/api/accounts/{address}/pending/txn/page/{pageIndex}")]
+        [ValidateModelState]
+        [SwaggerOperation("ListAccountPendingTransactions")]
+        [SwaggerResponse(statusCode: 200, type: typeof(AccountPendingTransactionSummaryResponse), description: "Success")]
+        [SwaggerResponse(statusCode: 404, type: typeof(ErrorResponseModel), description: "Not Found")]
+        [SwaggerResponse(statusCode: 429, type: typeof(ErrorResponseModel), description: "Client Error")]
+        [SwaggerResponse(statusCode: 503, type: typeof(ErrorResponseModel), description: "Server Error")]
+        public virtual IActionResult ListAccountPendingTransactions([FromRoute][Required] string address, [FromRoute][Required] int? pageIndex)
+        {
+            IDpscanApi service = _serviceProvider.GetRequiredService<IDpscanApi>();
+
+            var result = service.ListAccountPendingTransactions((Org.OpenAPITools.Model.Platform)PlatformType.DogeP, address, pageIndex);
+
+            if (result == null) return NotFound();
+
+            List<AccountPendingTransactionSummary> accountPendingTransactionSummaries = new List<AccountPendingTransactionSummary>();
+
+            foreach (var r in result.Result)
+            {
+                AccountPendingTransactionSummary accountPendingTransactionSummary = new AccountPendingTransactionSummary();
+                accountPendingTransactionSummary.Hash = r.TxnHash;
+                accountPendingTransactionSummary.BlockNumber = null;
+                accountPendingTransactionSummary.BlockHash = r.BlockHash;
+                accountPendingTransactionSummary.CreatedAt = r.CreatedAt;
+                accountPendingTransactionSummary.Value = r.Value;
+                accountPendingTransactionSummaries.Add(accountPendingTransactionSummary);
+            }
+
+            int pageCount = (int)result.PageCount;
+
+            AccountPendingTransactionSummaryResponse response = new AccountPendingTransactionSummaryResponse();
+            response.PageCount = pageCount;
+            response.Result = new List<AccountPendingTransactionSummary>(accountPendingTransactionSummaries);
+            return Ok(response);
         }
 
         /// <summary>

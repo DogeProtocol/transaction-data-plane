@@ -87,6 +87,52 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseModel'      
+
+  '/api/accounts/{address}/pending/txn/page/{pageIndex}':
+    get:
+      tags:
+        - Accounts
+      summary: List account pending transactions info by page
+      operationId: ListAccountPendingTransactions
+      parameters:
+        - name: address
+          in: path
+          required: true
+          description: the string representing the address          
+          schema:
+            type: string            
+        - name: pageIndex
+          in: path
+          required: true
+          description: the interger representing page number
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountPendingTransactionSummaryResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseModel'
+        '429':
+          description: Client Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseModel'
+        '503':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseModel'
                 
 components:
   schemas:
@@ -96,6 +142,9 @@ components:
         balance:
           type: object
           nullable: false
+        nonce:
+          type: object
+          nullable: false          
         blockNumber:
           type: number
           format: int64
@@ -162,6 +211,56 @@ components:
           items:
             $ref: '#/components/schemas/AccountTransactionSummary'
       additionalProperties: false
+    AccountPendingTransactionSummary:
+      type: object
+      properties:
+        hash:
+          type: string
+          nullable: true
+        blockNumber:
+          type: number
+          format: int64
+          nullable: true
+        blockHash:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        nonce:
+          type: object
+          nullable: true
+        from:
+          type: string
+          nullable: true
+        to:
+          type: string
+          nullable: true          
+        value:
+          type: object
+          nullable: true
+        gas:
+          type: object
+          nullable: true
+        gasPrice:
+          type: object
+          nullable: true
+        transactionType:
+          $ref: '#/components/schemas/TransactionType'
+        receipt:
+          $ref: '#/components/schemas/Receipt'
+      additionalProperties: false
+    AccountPendingTransactionSummaryResponse:
+      type: object
+      properties:
+        pageCount:
+          type: integer
+          format: int32
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountPendingTransactionSummary'
+      additionalProperties: false      
     TransactionType:
       enum:
         - CoinTransfer
