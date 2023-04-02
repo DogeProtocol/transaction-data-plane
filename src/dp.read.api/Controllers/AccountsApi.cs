@@ -56,7 +56,7 @@ namespace dp.read.api.Controllers
 
             var result = service.GetAccount((Org.OpenAPITools.Model.Platform)PlatformType.DogeP, address); 
             
-            if (result == null) return NotFound();
+            //if (result == null) return NotFound();
 
             Balance balance = new Balance();
             balance._Balance =(string) result.Balance;
@@ -93,7 +93,7 @@ namespace dp.read.api.Controllers
 
             var result = service.ListAccountPendingTransactions((Org.OpenAPITools.Model.Platform)PlatformType.DogeP, address, pageIndex);
 
-            if (result == null) return NotFound();
+            //if (result == null) return NotFound();
 
             List<AccountPendingTransactionSummary> accountPendingTransactionSummaries = new List<AccountPendingTransactionSummary>();
 
@@ -139,7 +139,7 @@ namespace dp.read.api.Controllers
 
             var result = service.ListAccountTransactions((Org.OpenAPITools.Model.Platform)PlatformType.DogeP, address, pageIndex);
             
-            if (result == null) return NotFound();
+            //if (result == null) return NotFound();
 
             List<AccountTransactionSummary> accountTransactionSummaries = new List<AccountTransactionSummary>();            
             
