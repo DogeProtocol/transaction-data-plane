@@ -5,6 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>dp.read.api</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\development\web-assemply-v0.2\transaction-data-plane\src\dp.read.api\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\development\Wallet-v0.2\transaction-data-plane\src\dp.read.api\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

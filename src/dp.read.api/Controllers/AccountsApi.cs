@@ -147,8 +147,8 @@ namespace dp.read.api.Controllers
             {
                 AccountTransactionSummary accountTransactionSummary = new AccountTransactionSummary();
                 accountTransactionSummary.Hash = r.TxnHash;
-                accountTransactionSummary.BlockNumber = null;
-                accountTransactionSummary.BlockHash = r.BlockHash;
+                accountTransactionSummary.From = r.FromAddress;
+                accountTransactionSummary.To = r.ToAddress;
                 accountTransactionSummary.CreatedAt = r.CreatedAt;
                 accountTransactionSummary.Value = r.Value;
                 accountTransactionSummaries.Add(accountTransactionSummary);
