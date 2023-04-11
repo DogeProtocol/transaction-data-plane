@@ -53,7 +53,7 @@ namespace dp.write.transaction.worker
             });
 
             //Block
-            Thread block = new Thread(Transaction().GetAwaiter().GetResult);
+            Thread block = new Thread(PendingTransaction().GetAwaiter().GetResult);
             block.Start();
         }
 
@@ -83,9 +83,9 @@ namespace dp.write.transaction.worker
                 .Build();
         }
 
-        private static async Task Transaction()
+        private static async Task PendingTransaction()
         {
-            Console.WriteLine("Transaction start");
+            Console.WriteLine("Pending start");
             while (true)
             {
                 // Recomended try catch
@@ -94,7 +94,7 @@ namespace dp.write.transaction.worker
                     //Console.WriteLine(" Worker - 1");
                     IWorker service =  serviceProvider.GetRequiredService<IWorker>();
                     //Console.WriteLine(" Worker - 2");
-                    Task t = service.TransactionSyncAsync();
+                    Task t = service.PendingTransactionSyncAsync();
                     //Console.WriteLine(" Worker - 3");
                     t.Wait();
                     //Console.WriteLine(" Worker - 4");
@@ -108,5 +108,7 @@ namespace dp.write.transaction.worker
                 }
             }
         }
+
+
     }
 }

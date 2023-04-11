@@ -17,9 +17,7 @@ namespace dp.write.transaction.Services.Queues
         /// <param name="Id">The cache id.</param>
         /// <param name="jsondocument">The jsondocument of the item to add.</param>
         void Set(string id, object jsondocument, object dateadded, object state);
-
-        void Put(string id, object state);
-
+        void Put(string id, object jsondocument, object state);
         /// <summary>
         /// Gets the jsondocument for the item with the given
         /// id. Returns null if the item is not found.

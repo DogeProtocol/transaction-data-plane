@@ -50,7 +50,7 @@ namespace dp.write.transaction.Services.Transactions
     
         public virtual async Task<string?> SendTransactionAsync(string id, string txData)
         {
-            Log.Info("Send  transaction on httpClient");
+            //Log.Info("Send  transaction on httpClient");
 
             var url = DP_CLIENT_URL;
 
@@ -63,7 +63,7 @@ namespace dp.write.transaction.Services.Transactions
             data = Regex.Replace(data, "<params>", txData);
             data = Regex.Replace(data, "<id>", id);
             
-            Console.Write("data : " + data);
+            //Console.Write("data : " + data);
 
             using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
             {
@@ -74,27 +74,11 @@ namespace dp.write.transaction.Services.Transactions
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
-                Console.WriteLine(result);
+                //Console.WriteLine(result);
+                return result;
             }
 
-            return httpResponse.StatusCode.ToString();
-
-            /*
-            using (var httpClient = new HttpClient())
-            {
-                using (var request = new HttpRequestMessage(new HttpMethod("POST"), DP_CLIENT_URL))
-                {
-                    request.Headers.TryAddWithoutValidation("Accept", "application/json");
-
-                 
-                    request.Content = new StringContent(txData, Encoding.UTF8, "application/json");
-
-                    var response = await httpClient.SendAsync(request);
-                    
-                    return response.ReasonPhrase;
-                }
-            }
-            */
+            ////return httpResponse.StatusCode.ToString();           
         }
 
 

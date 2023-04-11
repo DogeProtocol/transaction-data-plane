@@ -52,9 +52,9 @@ namespace dp.write.api.Controllers
         public virtual async Task<IActionResult> SendTransaction([FromBody]InlineObject inlineObject)
         {
             IQueueService service = _serviceProvider.GetRequiredService<IQueueService>();
-            string initialize = Configuration.State.Initialize.ToString();
+            string pending = Configuration.State.Pending.ToString();
             string guid = Guid.NewGuid().ToString();
-            service.Set(guid, inlineObject.TxnData, DateTime.UtcNow, initialize);
+            service.Set(guid, inlineObject.TxnData, DateTime.UtcNow, pending);
 
             TransactionSummaryResponse transactionSummaryResponse = new TransactionSummaryResponse();
             transactionSummaryResponse.Metadata = "2.0";

@@ -55,7 +55,7 @@ namespace dp.read.api.Controllers
             IDpscanApi service = _serviceProvider.GetRequiredService<IDpscanApi>();
 
             var result = service.GetAccount((Org.OpenAPITools.Model.Platform)PlatformType.DogeP, address); 
-            
+
             //if (result == null) return NotFound();
 
             Balance balance = new Balance();

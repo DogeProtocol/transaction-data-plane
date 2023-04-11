@@ -54,9 +54,9 @@ namespace dp.write.transaction.Services.Queues
         /// </summary>
         /// <param name="id">The id of the guid to add.</param>
         /// <param name="jsondocument">The jsondocument of the item to add.</param>
-        public void Put(string id, object state)
+        public void Put(string id, object jsondocument, object state)
         {
-            queue.PutContent(id, state);
+            queue.PutContent(id, jsondocument, state);
         }
         /// <summary>
         /// Gets the content for the item with the given

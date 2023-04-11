@@ -19,9 +19,11 @@ namespace dp.write.transaction
     }
     public class StateSettings
     {
-        public string Initialize { get; set; } = string.Empty;
+        public string Pending { get; set; } = string.Empty;
         public string Marked { get; set; } = string.Empty;
-        public string Complete { get; set; } = string.Empty;
+        public string Process { get; set; } = string.Empty;
+        public string Error { get; set; } = string.Empty;
+        public string Success { get; set; } = string.Empty;
     }
     public class LoggingSettings
     {

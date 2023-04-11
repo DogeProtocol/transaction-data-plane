@@ -61,9 +61,9 @@ namespace dp.write.transaction.Queue.MySqlCaching
             this.AddContentImpl(item.id, item.jsondocument, item.dateadded, item.state);
         }
 
-        public void PutContent(string id, object state)
+        public void PutContent(string id, object jsondocument, object state)
         {
-            this.MarkContentImpl(id, state);
+            this.MarkContentImpl(id, jsondocument, state);
         }
 
         public QueueItem? GetContent(string state)
@@ -134,11 +134,16 @@ namespace dp.write.transaction.Queue.MySqlCaching
         }
 
 
-        private void MarkContentImpl(string id,  object state)
+        private void MarkContentImpl(string id, object jsondocument, object state)
         {
             if (string.IsNullOrEmpty(id))
             {
                 throw new ArgumentNullException("id", "id must contain a value.");
+            }
+
+            if (jsondocument == null)
+            {
+                throw new ArgumentNullException("jsondocument", "jsondocument cannot be null.");
             }
 
             if (state == null)
@@ -149,6 +154,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
             QueueItem item = new QueueItem()
             {
                 id = id,
+                jsondocument = jsondocument,
                 state = state,
             };
 
@@ -242,7 +248,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
             try
             {
                 const string Sql =
-                    @"UPDATE transactions SET State=@State WHERE Id=@Id";
+                    @"UPDATE transactions SET JsonDocument=@JsonDocument, State=@State WHERE Id=@Id";
 
                 using (MySqlCommand command = connection.CreateCommand())
                 {
@@ -250,6 +256,7 @@ namespace dp.write.transaction.Queue.MySqlCaching
                     command.CommandText = Sql;
                     command.Transaction = transaction;
                     command.Parameters.AddWithValue("@Id", item.id);
+                    command.Parameters.AddWithValue("@JsonDocument", item.jsondocument);
                     command.Parameters.AddWithValue("@State", item.state);
                     return command.ExecuteNonQuery();
                 }
